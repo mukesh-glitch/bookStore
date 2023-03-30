@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-end">
+  <button type="button" class="btn btn-primary btn-sm m-1 "><a routerLink="/auth/login" class="none">Login</a></button>
+  <button type="button" class="btn btn-secondary btn-sm m-1 ">Sign Up</button> 
+</div>
+
+  <br />
+  <h2><p class="text-center">BookStore</p></h2>
+ 
+  <hr />
+
+
+  <div class="row">
+    <div *ngFor="let book of books" class="col-md-3">
+      <figure class="card card-product">
+        <div class="img-wrap">
+          <img src="{{ book.img_url }}" />
+    
+        </div>
+        <figcaption class="info-wrap">
+          <h6 class="title text-dots">
+            <a href="#">{{ book.name }}</a>
+          </h6>
+          <div class="action-wrap">
+            <a routerLink={{book.isbn_13}} class="btn btn-primary btn-sm float-right" > detail </a>
+            <span *ngIf="userToken">
+            <button class="btn btn-primary btn-sm float-right m-2" > buy </button>
+          </span>
+            <div class="price-wrap h5">
+              <span class="price-new">Rs.{{ book.price }}</span>
+              <del class="price-old">{{ book.discount }}</del>
+            </div>
+            <!-- price-wrap.// -->
+          </div>
+          <!-- action-wrap -->
+        </figcaption>
+      </figure>
+      <!-- card // -->
+    </div>
+  </div>
+</div>

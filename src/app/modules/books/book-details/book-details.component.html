@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 item-photo">
+      <img style="max-width: 100%" src="{{ bookDetail?.img_url }}" />
+    </div>
+    <div class="col-xs-5" style="border: 0px solid gray">
+      <!-- Datos del vendedor y titulo del producto -->
+      <h3>{{ bookDetail?.name }}</h3>
+      <h5 style="color: #337ab7">
+        Publis by <a href="#">{{ bookDetail?.publisher }}</a> ·
+        
+      </h5>
+
+      <!-- Precios -->
+      <h6 class="title-price"><small>OFFER PRICE</small></h6>
+      <h3 style="margin-top: 0px">Rs.{{bookDetail?.price}}</h3>
+
+      <!-- Detalles especificos del producto -->
+
+      <div class="section" style="padding-bottom: 20px">
+        <h6 class="title-attr"><small>CANTIDAD</small></h6>
+        <div>
+          <div class="btn-minus">
+            <span class="glyphicon glyphicon-minus"></span>
+          </div>
+          <input value="1" />
+          <div class="btn-plus">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones de compra -->
+      <div class="section" style="padding-bottom: 20px">
+        <button class="btn btn-success">
+          <span
+            style="margin-right: 20px"
+            class="glyphicon glyphicon-shopping-cart"
+            aria-hidden="true"
+          ></span>
+        BUY NOW
+        </button>
+
+      </div>
+    </div>
+
+    <div class="col-xs-9">
+      <ul class="menu-items">
+        <li class="active">Details</li>
+      </ul>
+      <div style="width: 100%; border-top: 1px solid silver">
+        <p style="padding: 15px">
+          <small>
+            Name  : {{bookDetail?.name}} <br>
+            Author : {{bookDetail?.author}}<br>
+            publisher : {{bookDetail?.publisher}}<br>
+            released_date : {{bookDetail?.released_date}}<br>
+            binding : {{bookDetail?.binding}}<br>
+            height : {{bookDetail?.height}}<br>
+            width : {{bookDetail?.width}}<br>
+            weight : {{bookDetail?.weight}} <br>
+            depth : {{bookDetail?.depth}}
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

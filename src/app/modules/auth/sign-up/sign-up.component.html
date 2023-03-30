@@ -1,0 +1,76 @@
+<!-- <form  >
+    <label for="FirstName">FirstName</label>
+    <input type="text"  class="form-control" name="FirstName" id="FirstName" placeholder="">
+    <label for="LastName">LastName</label>
+    <input type="email"  class="form-control" name="LastName" id="LastName" placeholder="">
+    <label for="text">Email</label>
+    <input type="email"  class="form-control" name="email" id="email" placeholder="">
+    <label for="Password">Password</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="">
+    <button > login</button>
+</form> -->
+
+<div class="container">
+  <div class="card card-container">
+    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <img
+      id="profile-img"
+      class="profile-img-card"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    />
+    <p id="profile-name" class="profile-name-card"></p>
+    <form class="form-signin">
+      <span id="reauth-email" class="reauth-email"></span>
+      <input
+        type="text"
+        id="FirstName"
+        [(ngModel)]="FirstName"
+        name="FirstName"
+        class="form-control"
+        placeholder="FirstName"
+        required
+        autofocus
+      />
+      <input
+        type="text"
+        id="LastName"
+        [(ngModel)]="LastName"
+        name="LastName"
+        class="form-control"
+        placeholder="LastName"
+        required
+        autofocus
+      />
+      <input
+        type="email"
+        id="inputEmail"
+        [(ngModel)]="email"
+        name="email"
+        class="form-control"
+        placeholder="Email address"
+        required
+        autofocus
+      />
+      <input
+        type="password"
+        id="inputPassword"
+        [(ngModel)]="password" 
+        name="password"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+      <div id="remember" class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label>
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin"  (click)=signup($event)>
+        Sign up
+      </button>
+    </form>
+    <!-- /form -->
+    <a routerLink="/auth/login" class="forgot-password">already have an account?</a>
+  </div>
+  <!-- /card-container -->
+</div>
