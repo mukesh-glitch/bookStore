@@ -22,4 +22,10 @@ export class AuthService {
     let {email,password} = data
     return this.http.post(this.rootUrl + '/auth/login', {email,password})
   }
+
+  logout(e:any){
+    localStorage.removeItem('profile');
+     return false;
+  }
+  
 }

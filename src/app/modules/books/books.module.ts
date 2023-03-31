@@ -5,6 +5,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import { AllbooksComponent } from './allbooks/allbooks.component';
 import { BooksService } from './books.service';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { AuthService } from '../auth.service';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     CommonModule,
     BooksRoutingModule
   ],providers:[
-    BooksService
+    BooksService,
+    AuthService
   ]
 })
 export class BooksModule { }

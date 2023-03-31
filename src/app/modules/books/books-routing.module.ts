@@ -4,6 +4,11 @@ import { AllbooksComponent } from './allbooks/allbooks.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 
 const routes: Routes = [{
+  path:"",
+  redirectTo: 'allbooks',
+  pathMatch:"full"
+},
+  {
   path:'allbooks',
   component:AllbooksComponent
 },{
