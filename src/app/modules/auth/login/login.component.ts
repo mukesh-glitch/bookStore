@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
 import { AuthService } from '../../auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   password!: string;
   userData!: any;
   user: any = '';
-  constructor(private authApi: AuthService, private router: Router) {}
+  constructor(private authApi: AuthService, private router: Router,private toastr: ToastrService) {}
 
   login(e: any) {
     e.preventDefault();
@@ -25,9 +26,13 @@ export class LoginComponent {
     // console.log(this.userData)
     this.authApi.login(this.userData).subscribe((data: any) => {
       if (data.error) {
-        alert(data.message);
+        this.toastr.error(data.message,'', {
+          timeOut: 3000,
+        });
       } else {
-        alert(data.message);
+        this.toastr.success('login successfully','welcome' ,{
+          timeOut:300,
+        });
         console.log(data.data);
         let user = data.data;
         localStorage.setItem('profile', JSON.stringify(user));

@@ -20,20 +20,24 @@ export class AllbooksComponent {
     private router: Router
   ) {
     this.bookApi.getBooks().subscribe((result: any) => {
+      console.log({fromBooks:result});
+      
       if (result.error) {
         alert(result.message);
       } else {
         this.books = result.data.books;
-        let token: any = localStorage.getItem('profile');
-        this.user = JSON.parse(token);
-
-        if (this.user.token) {
-          this.userToken = true;
-        } else {
-          this.userToken = false;
-        }
+     
       }
     });
+  }
+
+  getToken(){
+    this.user = this.auth.getToken()
+    if (this.user) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   allDetail(id: any) {
@@ -50,8 +54,7 @@ export class AllbooksComponent {
     // console.log({book:data})
     // let book = {};
     let buy = this.bookApi.buynow(
-      { bookId: data.id, quantity: 1 },
-      this.user.token
+      { bookId: data.id, quantity: 1 }
     );
   }
 }

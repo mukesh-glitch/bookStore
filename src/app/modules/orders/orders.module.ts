@@ -5,6 +5,8 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { MyordersComponent } from './myorders/myorders.component';
 import { OrdersService } from './orders.service';
 
+import { BooksService } from '../books/books.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { OrdersService } from './orders.service';
     OrdersRoutingModule
   ],
   providers:[
-    OrdersService
+    OrdersService,BooksService
   ]
 })
 export class OrdersModule { }

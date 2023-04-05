@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
   <div class="d-flex justify-content-end">
     <span *ngIf="userToken; else elseStatement">
@@ -11,7 +12,7 @@
 </div>
 
   <br />
-  <h2><p class="text-center">BookStore</p></h2>
+  
  
   <hr />
 
@@ -28,8 +29,8 @@
             <a routerLink={{book.isbn_13}} >{{ book.name }}</a>
           </h6>
           <div class="action-wrap">
-            <a routerLink={{book.isbn_13}} class="btn btn-primary btn-sm float-right" > detail </a>
-            <span *ngIf="userToken">
+            <a routerLink={{book.isbn_13}} class="btn btn-primary btn-sm float-right m-2" > detail </a>
+            <span *ngIf="getToken()">
             <button class="btn btn-primary btn-sm float-right m-2" (click)="buynow(book)"> buy </button>
           </span>
             <div class="price-wrap h5">

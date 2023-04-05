@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from './modules/cart/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bookStore';
+  // user:any;
+  // title = 'bookStore';
+  // constructor(private cart:CartService){
+  //   let token: any = localStorage.getItem('profile');
+  //   this.user = JSON.parse(token);
+  //  this.user = this.user.token
+  // }
+ 
+
 }

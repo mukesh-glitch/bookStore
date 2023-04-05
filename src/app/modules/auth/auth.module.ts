@@ -7,12 +7,14 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SmodulesModule } from 'src/app/smodules/smodules.module';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
-
+import { ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
+   
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { AuthService } from '../auth.service';
     FormsModule
   ],
   providers:[
-    AuthService
+    AuthService,
+    ToastrService
   ]
 })
 export class AuthModule { }
